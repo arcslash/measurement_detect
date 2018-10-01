@@ -1,0 +1,23 @@
+node_modules/
+Untitled Folder/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+corner
+kitty
+package.json
+package-lock.json
+testcalibnew1.jpg
+core/CMakeFiles/
+core/data/
+core/outputs/
+core/weights/
+core/CMakeCache.txt
+core/cmake_install.cmake
+core/corner
+core/kitty
+core/Makefile
+core/testcalibnew1.jpg
+core/testcalibnew1 (copy).jpg
+core/hull.jpg
+core/__pycache__/
