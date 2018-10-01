@@ -70,22 +70,37 @@
                                     <div class="label-text">Style Name</div>                                  
                                   </label>
                               </div>
-                            <div class="input-container">                                
-                                <label>
-                                  <input type="text" id="text-style"/>                                  
-                                  <div class="label-text">Style Code</div>
-                                  <button type="button" class="btn btn-primary" onclick="activate_canvas()" id="btn_new" >Add Corners</button>                                  
-                                </label>
-                                
-                              </div>
-                              
                             
-                            
-
+                              <div class="input-container">                                
+                                  <label>
+                                    <input type="text" id="text-style"/>                                  
+                                    <div class="label-text">Style Size</div>
+                                    <button type="button" class="btn btn-primary" onclick="activate_canvas()" id="btn_new" style="margin-bottom: 10%" >Add Corners</button>                                  
+                                  </label>
+                                  
+                                </div>
+                                <table class="table">
+                                        <thead class="thead-dark">
+                                          <tr>
+                                            <th scope="col">Corner Label</th>
+                                            <th scope="col">X Coordinate</th>
+                                            <th scope="col">Y Coordinate</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="point-locations">                                                
+                                        </tbody>
+                                      </table>                                
                         </div>
                     </div>
+                    
+               
+                    
+                          
+                    </div>
+              
+                       
 
-                  </div>
+                  
                   
                 <!-- <div class="container-fluid">
                       <div class="row">
@@ -147,9 +162,9 @@
                           <tr>
                             <td>
                                 <input type="text" name="measurement"/>                           
-                            </td>
-                            <td>
-                                <input type="text" name="sp"/>
+                            <event.stageY/td>
+                            <event.stageYtd>
+                             event.stageY   <input type="text" name="sp"/>
                           </td>
                             <td>
                                 <input type="text" name="ep"/>
