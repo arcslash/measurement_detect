@@ -1,0 +1,41 @@
+body{
+  margin-top:100px;
+  background:#ccc;
+  }
+
+#container{
+  background:#ccc;
+  width:610px;
+  margin:auto;
+  padding:10px;
+  height:305px;
+  border-radius:10px;
+  -webkit-box-shadow: 5px 5px 20px #666;
+  -moz-box-shadow: 5px 5px 20px #666;
+  box-shadow: 5px 5px 20px #666;
+  }
+
+#um{
+  background:pink;
+  height:300px;
+  width:300px;
+  float:left;
+  margin-right:10px;
+  border-radius:10px;
+  -webkit-box-shadow: 5px 5px 20px #666;
+  -moz-box-shadow: 5px 5px 20px #666;
+  box-shadow: 5px 5px 20px #666;
+}
+
+#dois{
+  background:#e6bfe6;
+  height:300px;
+  width:300px;
+  float:right;
+  border-radius:10px;
+  -webkit-box-shadow: 5px 5px 10px #666;
+  -moz-box-shadow: 5px 5px 10px #666;
+  box-shadow: 5px 5px 10px #666;
+}
+
+

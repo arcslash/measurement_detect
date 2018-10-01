@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/train.css" rel="stylesheet">
+        <script>
+          window.jQuery = window.$ = require('jquery');
+      </script>                 
+<title>Measurement Detector - Train</title>
+</head>
+<body>       
+                <nav class="navbar navbar-light bg-light" role="navigation">
+                    <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand navbar-brand-logo" href="#">
+                              <div class="logo">
+                                  <img src="images/pixel_logo.png">
+                              </div>                              
+                            </a>
+                      </div>
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                              
+                          <li class="dropdown">
+                              <!-- <a href="index.html" class="dropdown-toggle">Measure</a> -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                      <p>Account</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">View Profile</a></li>
+                              
+                              <li class="divider"></li>
+                              <li><a href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                  </nav>  
+                  
+                  <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div id="video_feed">
+                                <!-- <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image"> -->
+                               <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> 
+
+                               
+                                <canvas id ="point-canvas"></canvas>
+                                <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
+                                <!-- <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button> -->
+
+                                
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="input-container" style="margin-top:5%">
+                                <label>
+                                    <input type="text" id="text-style"/>                                  
+                                    <div class="label-text">Style Name</div>                                  
+                                  </label>
+                              </div>
+                            <div class="input-container">                                
+                                <label>
+                                  <input type="text" id="text-style"/>                                  
+                                  <div class="label-text">Style Code</div>
+                                  <button type="button" class="btn btn-primary" onclick="activate_canvas()" id="btn_new" >Add Corners</button>                                  
+                                </label>
+                                
+                              </div>
+                              
+                            
+                            
+
+                        </div>
+                    </div>
+
+                  </div>
+                  
+                <!-- <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div id="video_feed">
+                                    <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image">
+                                   <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> -->
+
+                                   <!--
+                                    <canvas id ="point-canvas"></canvas>
+                                    <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
+                                    <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6" id="results-section">
+                              <div class="row">                                
+                                <div class="col-md-12 col-sm-12 col-lg-12">                                    
+                                    <button type="button" class="btn btn-primary" onclick="show_inputs()" id="btn_new">New</button>
+                                    <button type="button" class="btn btn-primary" onclick="cancel()" style="visibility: hidden" id="btn_cancel">Cancel</button>
+                                    <div class="input-container" style="visibility:hidden">
+                                      <label>
+                                        <input type="text" id="text-style"/>
+                                        <div class="label-text">Style Name</div>
+                                      </label>
+                                    </div>
+                                    <div class="input-container" style="visibility:hidden">
+                                      <label>
+                                        <input type="text" id="text-country" />
+                                        <div class="label-text">Country</div>
+                                      </label>
+                                    </div>
+                                    <div class="input-container" style="visibility:hidden">
+                                      <button onclick="submit_fun()" id="btn_submit" style="visibility: hidden">Submit</button>
+                                      <button onclick="start_train()" id="btn_train" style="visibility: hidden">Train</button>
+                                    </div>                                    
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                        
+                    </div>   -->
+                    <!-- <div class=container-fluid>
+                      <div class="row">
+                        <button type="button" class="btn btn-primary" onclick="add_measurement()" style="visibility: visible" id="btn_add_measurement">ADD</button>
+                        <table id="measurement-table" style="color: black">
+                          <caption>Measurements Data</caption>
+                          <tr>
+                            <td>Measurement Name</td>
+                            <td>Starting Point</td>
+                            <td>Ending Point</td>
+                          </tr>
+                          <tr>
+                            <td>
+                                <input type="text" name="measurement"/>                           
+                            </td>
+                            <td>
+                                <input type="text" name="sp"/>
+                          </td>
+                            <td>
+                                <input type="text" name="ep"/>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>                   -->
+                    <script>
+                      window.jQuery = window.$ = require('jquery');
+                  </script>
+                    <script src="js/bootstrap.min.js" ></script>  
+                    <script src="js/easeljs.min.js"></script>     
+                    <script src="js/train.js"></script>    
+                  
+</body>
+</html>

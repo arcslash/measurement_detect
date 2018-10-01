@@ -1,0 +1,9 @@
+body, html {
+	height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+    font: 2em sans-serif;
+    background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+    background: -o-linear-gradient(left, #21d4fd, #b721ff);
+    background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+    background: linear-gradient(left, #21d4fd, #b721ff);
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/train.css" rel="stylesheet">
+        <script>
+          window.jQuery = window.$ = require('jquery');
+      </script>                 
+<title>Measurement Detector - Train</title>
+</head>
+<body>       
+                <nav class="navbar navbar-light bg-light" role="navigation">
+                    <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand navbar-brand-logo" href="#">
+                              <div class="logo">
+                                  <img src="images/pixel_logo.png">
+                              </div>                              
+                            </a>
+                      </div>
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                              
+                          <li class="dropdown">
+                             
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                      <p>Account</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">View Profile</a></li>
+                              
+                              <li class="divider"></li>
+                              <li><a href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                  </nav>      
+                  
+                  <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div id="video_feed">
+                                    <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image">
+                                    <!-- <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> -->
+                                    <canvas id ="point-canvas"></canvas>
+                                    <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
+                                    <!-- <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button> -->
+
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6" id="results-section">
+                              <div class="row">                                
+                                <div class="col-md-12 col-sm-12 col-lg-12">                                    
+                                    
+                                   
+                                    <div class="input-container" style="margin-top:25%">
+                                      <label>
+                                        <input type="text" id="text-style"/>
+                                        <div class="label-text">Style Code</div>
+                                        <button type="button" class="btn btn-primary" onclick="test_table()" id="btn_new" >Start Measuring</button>
+                                      </label>
+                                    </div>
+                                    
+                                                                     
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- Adding table to add measurements -->
+                        <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                        <table class="table">
+                                                <thead class="thead-dark">
+                                                  <tr>
+                                                    <th scope="col">Measurement</th>
+                                                    <th scope="col">Point 1</th>
+                                                    <th scope="col">Point 2</th>
+                                                    <th scope="col">OK Measurement</th>
+                                                    <th scope="col">Tolerance</th>
+                                                    <th scope="col">Measured</th>
+                                                    <th scope="col">Varience</th>
+                                                    <th scope="col">Varience %</th>
+                                                    <th scope="col">Status</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="measurements">
+                                                  
+                                                </tbody>
+                                              </table>
+                                              
+                                             
+
+                                    </div>
+                        </div>
+                    </div> 
+                    
+                    <script>
+                      window.jQuery = window.$ = require('jquery');
+                  </script>
+                    <script src="js/bootstrap.min.js" ></script>  
+                    <script src="js/easeljs.min.js"></script>     
+                    <script src="js/measure.js"></script>    
+                  
+</body>
+</html>

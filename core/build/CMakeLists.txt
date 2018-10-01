@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8)
+add_compile_options(-std=c++11)
+project(corner)
+project(kitty)
+
+find_package( OpenCV REQUIRED )
+add_executable(corner corner.cpp )
+add_executable(kitty kitty.cpp )
+target_link_libraries( corner ${OpenCV_LIBS} )
+target_link_libraries( kitty ${OpenCV_LIBS} )

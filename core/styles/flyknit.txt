@@ -1,0 +1,3 @@
+{"style_name":"FlyKnit",
+"measurements":[{"name":"L","sp":0,"ep":7}]
+}
