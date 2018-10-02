@@ -50,7 +50,7 @@ let mainWindow = null
 const createWindow = () => {
   mainWindow = new BrowserWindow({width: 800, height: 600})
   mainWindow.loadURL(require('url').format({
-    pathname: path.join(__dirname,'screens', 'train.html'),
+    pathname: path.join(__dirname,'screens', 'login.html'),
     protocol: 'file:',
     slashes: true
   }))

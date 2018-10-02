@@ -5,9 +5,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/train.css" rel="stylesheet">
-        <script>
-          window.jQuery = window.$ = require('jquery');
-      </script>                 
+        <link href="css/animate.min.css" rel="stylesheet">
+            
 <title>Measurement Detector - Train</title>
 </head>
 <body>       
@@ -48,20 +47,40 @@
                   </nav>  
                   
                   <div class="container-fluid">
-                    <div class="row">
+                    <div class="row" style="margin-bottom: 5%; height:100%">
                         <div class="col-sm-6 col-md-6 col-lg-6">
-                            <div id="video_feed">
+                            <div id="video_feed" >
                                 <!-- <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image"> -->
                                <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> 
 
                                
                                 <canvas id ="point-canvas"></canvas>
-                                <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
+                                
                                 <!-- <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button> -->
+                                <!-- <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button> -->
+                                
 
                                 
                             </div>
-
+                            <div id="measurement_table" style="margin-top: 60%"> 
+                              <button type="button" class="btn btn-primary"  style="width: 30%" onclick="add_measurements()">Add</button>  
+                              <button type="button" class="btn btn-primary"  style="width: 30%" onclick="remove_measurements()">Remove</button>
+                              <button type="button" class="btn btn-primary"  style="width: 35%" onclick="store_style()">Create Style</button>                        
+                              <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Measurement Name</th>
+                                    <th scope="col">Starting Point</th>
+                                    <th scope="col">Ending Point</th>
+                                    <th scope="col">Size</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="measurement-locations" style="color:black">                                                
+                                </tbody>
+                              </table> 
+                            </div>          
+                        
+                            
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="input-container" style="margin-top:5%">
@@ -70,12 +89,20 @@
                                     <div class="label-text">Style Name</div>                                  
                                   </label>
                               </div>
+                              <div class="input-container">
+                                <label>
+                                    <input type="text" id="text-style"/>                                  
+                                    <div class="label-text">Style Code</div>                                  
+                                  </label>
+                              </div>
+
                             
                               <div class="input-container">                                
                                   <label>
                                     <input type="text" id="text-style"/>                                  
                                     <div class="label-text">Style Size</div>
-                                    <button type="button" class="btn btn-primary" onclick="activate_canvas()" id="btn_new" style="margin-bottom: 10%" >Add Corners</button>                                  
+                                    <button type="button" class="btn btn-primary" onclick="activate_canvas()" id="btn_corners" style="margin-bottom: 10%" >Add Corners</button>
+                                                                       
                                   </label>
                                   
                                 </div>
@@ -91,93 +118,27 @@
                                         </tbody>
                                       </table>                                
                         </div>
+                       
                     </div>
+
                     
-               
                     
                           
                     </div>
+
+                    
+
+                    
+                    
               
                        
 
-                  
-                  
-                <!-- <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-lg-12">
-                          <div class="row">
-                            <div class="col-md-6 col-sm-6 col-lg-6">
-                                <div id="video_feed">
-                                    <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image">
-                                   <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> -->
-
-                                   <!--
-                                    <canvas id ="point-canvas"></canvas>
-                                    <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
-                                    <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-lg-6" id="results-section">
-                              <div class="row">                                
-                                <div class="col-md-12 col-sm-12 col-lg-12">                                    
-                                    <button type="button" class="btn btn-primary" onclick="show_inputs()" id="btn_new">New</button>
-                                    <button type="button" class="btn btn-primary" onclick="cancel()" style="visibility: hidden" id="btn_cancel">Cancel</button>
-                                    <div class="input-container" style="visibility:hidden">
-                                      <label>
-                                        <input type="text" id="text-style"/>
-                                        <div class="label-text">Style Name</div>
-                                      </label>
-                                    </div>
-                                    <div class="input-container" style="visibility:hidden">
-                                      <label>
-                                        <input type="text" id="text-country" />
-                                        <div class="label-text">Country</div>
-                                      </label>
-                                    </div>
-                                    <div class="input-container" style="visibility:hidden">
-                                      <button onclick="submit_fun()" id="btn_submit" style="visibility: hidden">Submit</button>
-                                      <button onclick="start_train()" id="btn_train" style="visibility: hidden">Train</button>
-                                    </div>                                    
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                        
-                    </div>   -->
-                    <!-- <div class=container-fluid>
-                      <div class="row">
-                        <button type="button" class="btn btn-primary" onclick="add_measurement()" style="visibility: visible" id="btn_add_measurement">ADD</button>
-                        <table id="measurement-table" style="color: black">
-                          <caption>Measurements Data</caption>
-                          <tr>
-                            <td>Measurement Name</td>
-                            <td>Starting Point</td>
-                            <td>Ending Point</td>
-                          </tr>
-                          <tr>
-                            <td>
-                                <input type="text" name="measurement"/>                           
-                            <event.stageY/td>
-                            <event.stageYtd>
-                             event.stageY   <input type="text" name="sp"/>
-                          </td>
-                            <td>
-                                <input type="text" name="ep"/>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>                   -->
                     <script>
                       window.jQuery = window.$ = require('jquery');
                   </script>
                     <script src="js/bootstrap.min.js" ></script>  
-                    <script src="js/easeljs.min.js"></script>     
+                    <script src="js/easeljs.min.js"></script>
+                           
                     <script src="js/train.js"></script>    
                   
 </body>

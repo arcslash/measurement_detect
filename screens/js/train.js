@@ -9,8 +9,13 @@ var stage;
 var points = ([]);
 var i = 0;
 var point_no = 0;
+var no_measurements = 0;
 const fs = require('fs');
 const point_name = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','u','p'];
+
+
+
+
 function init(){
     $('#train_image').css('height', $('#train_image').naturalHeight);
     $('#train_image').css('width', $('#train_image').naturalWidth); 
@@ -130,23 +135,59 @@ function next(){
 function start_train(){
   $.get('http://localhost:5000/train',function(data){
       
-    console.log("Training Response:" + data)
+    console.log("Training Response:" + data);
     
       
   });
 }
-function add_measurement(){
-  $('#measurement-table').append( '<tr><td><input type="text" name="measurement"/></td><td><input type="text" name="sp"/></td><td><input type="text" name="ep"/></td></tr>' );
+function add_measurements(){
+  $('#measurement-locations').append( '<tr>\
+  <td><input type="text" name="measurement" class="measurement"/></td>\
+  <td><input type="text" name="sp" class="sp"/></td>\
+  <td><input type="text" name="ep" class="ep"/></td>\
+  <td><input type="text" name="size" class="size"/></td>\
+  </tr>' );
+// $('.overlay').css('visibility','visible');
+}
+function remove_measurements(){
+  $("#measurement-locations").find("tr:gt(0)").remove();
+  no_measurements--;
 }
 function add_table(label, xcor, ycor){
+  
   $('#point-locations').append( '<tr>\
-  <th>'+label+'</th>\
+  <td>'+label+'</th>\
   <td>'+ xcor +'</td>\
   <td>'+ ycor +'</td>\
   </tr>');
+  no_measurements++;
+}
+function store_style(){
+  
+  $('#measurement_table tr td .measurement').each(function() {
+    // console.log("printing elements" + $(this)[0]);
+    var label = $(this).val();  
+    //console.log("Html:" + $(this).html());  
+    console.log("Name:" + label); 
+ });
+ $('#measurement_table tr td .sp').each(function() {
+  // console.log("printing elements" + $(this)[0]);
+  var label = $(this).val();  
+  //console.log("Html:" + $(this).html());  
+  console.log("Starting point:" + label); 
+});
+$('#measurement_table tr td .ep').each(function() {
+  // console.log("printing elements" + $(this)[0]);
+  var label = $(this).val();  
+  //console.log("Html:" + $(this).html());  
+  console.log("Ending point:" + label); 
+});
+$('#measurement_table tr td .size').each(function() {
+  // console.log("printing elements" + $(this)[0]);
+  var label = $(this).val();  
+  //console.log("Html:" + $(this).html());  
+  console.log("Size:" + label); 
+});
 }
 
-
-
-
-  init();
+init();

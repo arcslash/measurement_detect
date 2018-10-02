@@ -60,3 +60,12 @@
 
 
 })(jQuery);
+
+function login_validate(){
+    var user = $("#email").val();
+    var password = $("#pass").val();
+    console.log("Email:" + user  + "  Pass:"+ password);
+    if(password == "12345"){
+        
+    }
+}
