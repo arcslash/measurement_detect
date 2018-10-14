@@ -4,12 +4,18 @@ var ctx = document.getElementById('point-canvas').getContext("2d");
 var xpos;
 var ypos;
 var style_name = "";
-var style_country = "";
+var style_size = "";
+var style_code = "";
 var stage;
 var points = ([]);
 var i = 0;
 var point_no = 0;
 var no_measurements = 0;
+
+var measurement_names = []
+var sps = []
+var eps = []
+
 const fs = require('fs');
 const point_name = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','u','p'];
 
@@ -107,12 +113,23 @@ $('.input-container input').blur(function(event) {
     }
   });
 function build_config(){
-  
+  // style_name = $('#text-style').val();
+  style_size = $('#text-size').val();
+  style_code = $('#text-code').val();
   $('#btn_train').css('visibility','visible');
   
   try { 
-    filename = style_name + '_' + i ;
-    config = { "imagePath":filename+'.jpg',"style":style_name, "points":points, "country":style_country };
+    filename = style_code + '_' + i ;
+    var measurement_data = [];
+    //building array of values
+    for(i = 0;i < measurement_names.length; i++){
+      measurement_data.push({"measurement_name":measurement_names[i],"sp":sps[i],"ep":eps[i]});
+
+    }
+    // config = { "imagePath":filename+'.jpg',"style":style_name, "points":points, "code":style_code ,"size":style_size ,"measurements":measurement_data};
+
+
+    config = { "imagePath":filename+'.jpg', "points":points, "code":style_code ,"size":style_size ,"measurements":measurement_data};
     let data = JSON.stringify(config);  
     fs.writeFileSync('core/data/'+ filename +'.json', data, 'utf-8', 4); 
     $.post( "http://localhost:5000/capture", { file: filename } );
@@ -145,7 +162,6 @@ function add_measurements(){
   <td><input type="text" name="measurement" class="measurement"/></td>\
   <td><input type="text" name="sp" class="sp"/></td>\
   <td><input type="text" name="ep" class="ep"/></td>\
-  <td><input type="text" name="size" class="size"/></td>\
   </tr>' );
 // $('.overlay').css('visibility','visible');
 }
@@ -169,25 +185,25 @@ function store_style(){
     var label = $(this).val();  
     //console.log("Html:" + $(this).html());  
     console.log("Name:" + label); 
+    measurement_names.push(label);
  });
  $('#measurement_table tr td .sp').each(function() {
   // console.log("printing elements" + $(this)[0]);
-  var label = $(this).val();  
+  var sp = $(this).val();  
   //console.log("Html:" + $(this).html());  
-  console.log("Starting point:" + label); 
+  console.log("Starting point:" + sp); 
+  sps.push(sp);
 });
 $('#measurement_table tr td .ep').each(function() {
   // console.log("printing elements" + $(this)[0]);
-  var label = $(this).val();  
+  var ep = $(this).val();  
   //console.log("Html:" + $(this).html());  
-  console.log("Ending point:" + label); 
+  console.log("Ending point:" + ep); 
+  eps.push(ep);
 });
-$('#measurement_table tr td .size').each(function() {
-  // console.log("printing elements" + $(this)[0]);
-  var label = $(this).val();  
-  //console.log("Html:" + $(this).html());  
-  console.log("Size:" + label); 
-});
+
+
+build_config();
 }
 
 init();

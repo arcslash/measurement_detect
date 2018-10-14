@@ -54,23 +54,27 @@
                             <div class="col-md-6 col-sm-6 col-lg-6">
                                 <div id="video_feed">
                                     <img class="img-fluid rounded" src="../core/testcalibnew1.jpg" alt="Submit to activate the Canvas" id="train_image">
-                                    <!-- <img class="img-fluid" src="../testcalibnew1.jpg" alt="Card image cap" id="train_image"> -->
+                                   
                                     <canvas id ="point-canvas"></canvas>
                                     <button type="button" class="btn btn-primary" onclick="location.reload()">Reset</button>
-                                    <!-- <button onclick="next()" id="btn_next" style="visibility: hidden">NEXT</button> -->
-
                                     
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-lg-6" id="results-section">
                               <div class="row">                                
                                 <div class="col-md-12 col-sm-12 col-lg-12">                                    
-                                    
+                                  <div class="input-container" style="margin-top:20%">
+                                    <label>
+                                      <input type="text" id="text-style"/>
+                                      <div class="label-text">Style Code</div>
+                                      
+                                    </label>
+                                  </div>
                                    
-                                    <div class="input-container" style="margin-top:25%">
+                                    <div class="input-container">
                                       <label>
                                         <input type="text" id="text-style"/>
-                                        <div class="label-text">Style Code</div>
+                                        <div class="label-text">Size</div>
                                         <button type="button" class="btn btn-primary" onclick="test_table()" id="btn_new" >Start Measuring</button>
                                       </label>
                                     </div>
@@ -85,7 +89,7 @@
                         <!-- Adding table to add measurements -->
                         <div class="row">
                                 <div class="col-md-12 col-sm-12 col-lg-12">
-                                        <table class="table">
+                                        <table class="table" style="margin-top: 5%">
                                                 <thead class="thead-dark">
                                                   <tr>
                                                     <th scope="col">Measurement</th>
@@ -99,13 +103,9 @@
                                                     <th scope="col">Status</th>
                                                   </tr>
                                                 </thead>
-                                                <tbody id="measurements">
-                                                  
+                                                <tbody id="measurements">                                                  
                                                 </tbody>
-                                              </table>
-                                              
-                                             
-
+                                              </table>                                             
                                     </div>
                         </div>
                     </div> 

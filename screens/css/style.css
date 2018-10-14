@@ -1,0 +1,105 @@
+:root {
+    --colour_full_background:  #25274d;
+    --colour_video_container: #464866;
+    --colour_results_container: #464866;
+    --colour_button_idle: #29648a;
+    --colour_button_hover: #29648A;
+    --box_padding:10px;
+    --colour_text: #ffffff;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--colour_full_background);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  color: var(--colour_text);
+  /* cursor: n-resize; */
+}
+nav{
+  background-color: white;
+  
+}
+.input-container {
+  padding: 20px 0 0px;
+  text-align: center;
+}
+.input-container label {
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.input-container label .label-text {
+  /* color: #9B9B9B;
+  cursor: text;
+  font-size: 20px;
+  line-height: 20px;
+  transform: translateY(-34px);
+  transition: all 0.3s; */
+}
+.input-container input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #4A4A4A;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  outline: 0;
+  padding: 5px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  width: 200px;
+}
+.input-container input:focus {
+  width: 400px;
+}
+.input-container input:focus + .label-text {
+  color: #F0F0F0;
+  font-size: 13px;
+  transform: translateY(-74px);
+}
+.input-container input.value-exists + .label-text {
+  font-size: 13px;
+  transform: translateY(-74px);
+}
+
+button {
+  background-color: #333333;
+  border: 2px solid white;
+  border-radius: 27px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+button:hover, button:focus {
+  background-color: white;
+  color: #333333;
+  outline: 0;
+}
+.table-fixed thead {
+    width: 97%;
+  }
+  .table-fixed tbody {
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+    display: block;
+  }
+  .table-fixed tbody td, .table-fixed thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+  }
+
+input{
+    width: 50%;
+   color: #000;
+}
