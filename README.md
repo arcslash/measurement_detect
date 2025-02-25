@@ -32,3 +32,9 @@ Start the Electron application:
 npm start
 ```
 
+Dependencies
+Measurement Detect relies on the following technologies:
+
+Electron: For building the cross-platform desktop application.
+OpenCV: For image processing and computer vision tasks.
+TensorFlow / Keras: For AI and machine learning functionalities.
